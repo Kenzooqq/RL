@@ -46,10 +46,8 @@ Write-Host "Dependencies" -ForegroundColor DarkBlue
 Write-Host
 Write-Host "Bstrings https://f001.backblazeb2.com/file/EricZimmermanTools/net6/bstrings.zip" -ForegroundColor DarkCyan
 Write-Host "TimelineExplorer https://f001.backblazeb2.com/file/EricZimmermanTools/net6/TimelineExplorer.zip" -ForegroundColor DarkCyan
-Write-Host "PECmd https://f001.backblazeb2.com/file/EricZimmermanTools/net6/PECmd.zip" -ForegroundColor DarkCyan
 Write-Host "SrumECmd https://f001.backblazeb2.com/file/EricZimmermanTools/net6/SrumECmd.zip" -ForegroundColor DarkCyan
 Write-Host "Rla https://f001.backblazeb2.com/file/EricZimmermanTools/net6/rla.zip" -ForegroundColor DarkCyan
-Write-Host "WxTCmd https://f001.backblazeb2.com/file/EricZimmermanTools/net6/WxTCmd.zip" -ForegroundColor DarkCyan
 Write-Host
 Write-Host "Bstrings..." -ForegroundColor Cyan
 
@@ -70,11 +68,11 @@ LoadingAnimation
 $outputFile = "Bstrings_Results.csv"
 
 
-Invoke-Expression "cmd /c bstrings.exe -f C:\Windows\system32\config\SYSTEM --ls harddiskvolume"
+Invoke-Expression "cmd /c bstrings.exe -f C:\Windows\system32\config\SYSTEM --ls harddiskvolume" | Out-Null
 
 $output | Out-File -FilePath $outputFile -Encoding UTF8
 
-
+Write-Host "Bstrings saved in .csv" -ForegroundColor Green
 Write-Host
 Write-Host "SrumECmd" -ForegroundColor DarkGreen
 
