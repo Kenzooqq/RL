@@ -118,6 +118,20 @@ Invoke-Expression "cmd /c rla.exe -f C:\Windows\System32\config\SYSTEM --out ." 
 Write-Host 
 Write-host "Analyzing Rla" -ForegroundColor Blue
 Write-Host
+Write-Host "MFTECmd" -ForegroundColor Yellow
+
+function LoadingAnimation {
+    $barLength = 35
+    for ($i = 0; $i -le $barLength; $i++) {
+        $bar = '[' + '=' * $i + ' ' * ($barLength - $i) + ']'
+        Write-Host -NoNewline "`r$bar"
+        Start-Sleep -Milliseconds 100
+    }
+    Write-Host ""
+    Write-Host "¡Carga completa!"
+}
+
+LoadingAnimation
     }
     2 {
         Write-Host
@@ -136,19 +150,6 @@ function LoadingAnimation {
 }
 
 LoadingAnimation
-
-Write-Host "MFTECmd" -ForegroundColor Yellow
-
-function LoadingAnimation {
-    $barLength = 35
-    for ($i = 0; $i -le $barLength; $i++) {
-        $bar = '[' + '=' * $i + ' ' * ($barLength - $i) + ']'
-        Write-Host -NoNewline "`r$bar"
-        Start-Sleep -Milliseconds 100
-    }
-    Write-Host ""
-    Write-Host "¡Carga completa!"
-}
 
 Invoke-Expression "cmd /c MFTECmd.exe -f c:\$MFT --csv ." | Out-Null
 Write-host "Analyzing MFTECmd" -ForegroundColor Blue
