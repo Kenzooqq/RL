@@ -51,8 +51,9 @@ Write-Host "Bstrings https://f001.backblazeb2.com/file/EricZimmermanTools/net6/b
 Write-Host "TimelineExplorer https://f001.backblazeb2.com/file/EricZimmermanTools/net6/TimelineExplorer.zip" -ForegroundColor DarkCyan
 Write-Host "SrumECmd https://f001.backblazeb2.com/file/EricZimmermanTools/net6/SrumECmd.zip" -ForegroundColor DarkCyan
 Write-Host "Rla https://f001.backblazeb2.com/file/EricZimmermanTools/net6/rla.zip" -ForegroundColor DarkCyan
+Write-Host "https://f001.backblazeb2.com/file/EricZimmermanTools/net6/MFTECmd.zip" -ForegroundColor DarkCyan
 Write-Host
-Write-Host "Bstrings..." -ForegroundColor Cyan
+Write-Host "Bstrings" -ForegroundColor Cyan
 
 function LoadingAnimation {
     $barLength = 15
@@ -74,7 +75,7 @@ $outputFile = "Bstrings_Results.csv"
 Invoke-Expression "cmd /c bstrings.exe -f C:\Windows\system32\config\SYSTEM --ls harddiskvolume" | Out-Null
 
 $output | Out-File -FilePath $outputFile -Encoding UTF8
-
+Write-host "Analyzing Bstrings" -ForegroundColor Blue
 Write-Host "Bstrings saved in .csv" -ForegroundColor Green
 Write-Host
 Write-Host "SrumECmd" -ForegroundColor DarkGreen
@@ -92,8 +93,9 @@ function LoadingAnimation {
 
 LoadingAnimation
 
-Invoke-Expression "cmd /c SrumECmd.exe -f C:\Windows\System32\sru\SRUDB.dat --csv ."
- 
+Invoke-Expression "cmd /c SrumECmd.exe -f C:\Windows\System32\sru\SRUDB.dat --csv ." | Out-Null
+Write-host "Analyzing SrumECmd" -ForegroundColor Blue
+Write-Host "SrumECmd saved in .csv" -ForegroundColor Green
 Write-Host
 Write-Host "Rla......" -ForegroundColor DarkCyan
 
@@ -110,8 +112,8 @@ function LoadingAnimation {
 
 LoadingAnimation
 
-Invoke-Expression "cmd /c rla.exe -f C:\Windows\System32\config\SYSTEM --out ."
-
+Invoke-Expression "cmd /c rla.exe -f C:\Windows\System32\config\SYSTEM --out ." | Out-Null
+Write-host "Analyzing Rla" -ForegroundColor Blue
 Write-Host
     }
     2 {
@@ -132,6 +134,23 @@ function LoadingAnimation {
 
 LoadingAnimation
 
+Write-Host "MFTECmd" -ForegroundColor Yellow
+
+function LoadingAnimation {
+    $barLength = 35
+    for ($i = 0; $i -le $barLength; $i++) {
+        $bar = '[' + '=' * $i + ' ' * ($barLength - $i) + ']'
+        Write-Host -NoNewline "`r$bar"
+        Start-Sleep -Milliseconds 100
+    }
+    Write-Host ""
+    Write-Host "¡Carga completa!"
+}
+
+Invoke-Expression "cmd /c MFTECmd.exe -f c:\$MFT --csv ." | Out-Null
+Write-host "Analyzing MFTECmd" -ForegroundColor Blue
+Write-Host "MFTECmd saved in .csv" -ForegroundColor Green
+Write-Host 
 Write-Host "--------------------------------------------------"
 Write-Host "Dps" -ForegroundColor Red
 Write-Host "--------------------------------------------------"
