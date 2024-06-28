@@ -132,6 +132,11 @@ function LoadingAnimation {
 }
 
 LoadingAnimation
+
+Invoke-Expression "cmd /c MFTECmd.exe -f c:\$MFT --csv ." | Out-Null
+Write-host "Analyzing MFTECmd" -ForegroundColor Blue
+Write-Host "MFTECmd saved in .csv" -ForegroundColor Green
+Write-Host
     }
     2 {
         Write-Host
@@ -150,10 +155,6 @@ function LoadingAnimation {
 }
 
 LoadingAnimation
-
-Invoke-Expression "cmd /c MFTECmd.exe -f c:\MFT --csv ." | Out-Null
-Write-host "Analyzing MFTECmd" -ForegroundColor Blue
-Write-Host "MFTECmd saved in .csv" -ForegroundColor Green
 Write-Host 
 Write-Host "--------------------------------------------------"
 Write-Host "Dps" -ForegroundColor Red
