@@ -51,7 +51,7 @@ Write-Host "Bstrings https://f001.backblazeb2.com/file/EricZimmermanTools/net6/b
 Write-Host "TimelineExplorer https://f001.backblazeb2.com/file/EricZimmermanTools/net6/TimelineExplorer.zip" -ForegroundColor DarkCyan
 Write-Host "SrumECmd https://f001.backblazeb2.com/file/EricZimmermanTools/net6/SrumECmd.zip" -ForegroundColor DarkCyan
 Write-Host "Rla https://f001.backblazeb2.com/file/EricZimmermanTools/net6/rla.zip" -ForegroundColor DarkCyan
-Write-Host "https://f001.backblazeb2.com/file/EricZimmermanTools/net6/MFTECmd.zip" -ForegroundColor DarkCyan
+Write-Host "MFTECmd https://f001.backblazeb2.com/file/EricZimmermanTools/net6/MFTECmd.zip" -ForegroundColor DarkCyan
 Write-Host
 Write-Host "Bstrings" -ForegroundColor Cyan
 
