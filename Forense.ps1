@@ -28,7 +28,13 @@ __________           .___ .__          __                 ___________           
 
 "@ -ForegroundColor Red
 
-Write-Host "By Kenzooq for Red Lotus" -ForegroundColor Blue
+Write-Host "
+   ___         __                              
+  / _ )__ __  / /_____ ___  ___ ___  ___  ___ _
+ / _  / // / /  '_/ -_) _ \/_ // _ \/ _ \/ _ `/
+/____/\_, / /_/\_\\__/_//_//__/\___/\___/\_, / 
+     /___/                                /_/  
+" -ForegroundColor Blue
 Write-Host 
 
 
