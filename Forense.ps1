@@ -75,6 +75,7 @@ $outputFile = "Bstrings_Results.csv"
 Invoke-Expression "cmd /c bstrings.exe -f C:\Windows\system32\config\SYSTEM --ls harddiskvolume" | Out-Null
 
 $output | Out-File -FilePath $outputFile -Encoding UTF8
+Write-Host 
 Write-host "Analyzing Bstrings" -ForegroundColor Blue
 Write-Host "Bstrings saved in .csv" -ForegroundColor Green
 Write-Host
@@ -94,6 +95,7 @@ function LoadingAnimation {
 LoadingAnimation
 
 Invoke-Expression "cmd /c SrumECmd.exe -f C:\Windows\System32\sru\SRUDB.dat --csv ." | Out-Null
+Write-Host 
 Write-host "Analyzing SrumECmd" -ForegroundColor Blue
 Write-Host "SrumECmd saved in .csv" -ForegroundColor Green
 Write-Host
@@ -113,6 +115,7 @@ function LoadingAnimation {
 LoadingAnimation
 
 Invoke-Expression "cmd /c rla.exe -f C:\Windows\System32\config\SYSTEM --out ." | Out-Null
+Write-Host 
 Write-host "Analyzing Rla" -ForegroundColor Blue
 Write-Host
     }
