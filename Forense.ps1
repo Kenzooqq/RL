@@ -5,12 +5,11 @@ function Test-Admin {
 }
 
 if (!(Test-Admin)) {
-    Write-Warning "Por favor, ejecuta este script como administrador."
+    Write-Warning "run this script as Admin."
     Start-Sleep 10
     Exit
 }
 
-Write-Host "El script se está ejecutando desde la ubicación correcta."
 
 Clear-Host
 
@@ -34,16 +33,15 @@ Write-Host
 
 
 Write-Host "Bienvenido"
-Write-Host "1. Scanear" -ForegroundColor Cyan
-Write-Host "2. Recopilar información" -ForegroundColor Cyan
-Write-Host "Por favor, elige una opción (1 o 2): "
+Write-Host "1. Scan Forensics Tools" -ForegroundColor Cyan
+Write-Host "Select option "
 $opcion = Read-Host
 
 
 switch ($opcion) {
     1 {
        
-        Write-Host "Escaneando...."
+        Write-Host "Scaning...."
         
 Write-Host "Dependencies" -ForegroundColor DarkBlue
 Write-Host
@@ -56,14 +54,13 @@ Write-Host
 Write-Host "Bstrings" -ForegroundColor Cyan
 
 function LoadingAnimation {
-    $barLength = 15
+    $barLength = 20
     for ($i = 0; $i -le $barLength; $i++) {
         $bar = '[' + '=' * $i + ' ' * ($barLength - $i) + ']'
         Write-Host -NoNewline "`r$bar"
         Start-Sleep -Milliseconds 100
     }
     Write-Host ""
-    Write-Host "¡Carga completa!"
 }
 
 LoadingAnimation
@@ -109,7 +106,6 @@ function LoadingAnimation {
         Start-Sleep -Milliseconds 100
     }
     Write-Host ""
-    Write-Host "¡Carga completa!"
 }
 
 LoadingAnimation
@@ -128,7 +124,6 @@ function LoadingAnimation {
         Start-Sleep -Milliseconds 100
     }
     Write-Host ""
-    Write-Host "¡Carga completa!"
 }
 
 LoadingAnimation
@@ -140,7 +135,7 @@ Write-Host
     }
     2 {
         Write-Host
-        Write-Host "Recopilar Informacion"
+        Write-Host "Information"
         Write-Host " Trackings" -ForegroundColor Green
 
 function LoadingAnimation {
